@@ -3,7 +3,6 @@
 
 ### 介绍 📖
 
-Zhipeng Lovesleep Music Player
 
 
 基于 Vue3.3、Vite4、Pinia、Element-Plus 开源的Web音乐播放器，
