@@ -212,14 +212,7 @@ const markAllAsRead = async () => {
 						p-id="2831" fill="#525B72"></path>
 				</svg>
 			</a>
-			<!-- <a class="menu-link is-active" href="javascript:;" @click="router.go(1)">
-				<svg t="1648618362955" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-					p-id="2626" width="32" height="32">
-					<path
-						d="M448 672c-6.4 0-19.2 0-25.6-6.4-12.8-12.8-12.8-32 0-44.8L531.2 512 422.4 409.6c-12.8-12.8-12.8-32 0-44.8s32-12.8 44.8 0l128 128c12.8 12.8 12.8 32 0 44.8l-128 128C467.2 672 454.4 672 448 672z"
-						p-id="2627" fill="#525B72"></path>
-				</svg>
-			</a> -->
+		
 		</div>
 
 		<div class="search-bar">

@@ -87,3 +87,4 @@ export const fetchNotifications = () =>
 //获取通知私信    登录后调用此接口 ,可获取私信
 export const msg_private = () => request.get(`/msg/private?limit=6`);
 
+export const Heart_Mode = (id) => request.get(`/playmode/intelligence/list?id=${id}&pid=24381616`);
