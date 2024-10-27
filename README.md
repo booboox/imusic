@@ -1,8 +1,8 @@
-# ZP-lovesleep-Music-Player
+# imusic
+
 
 ### 介绍 📖
 
-Zhipeng Lovesleep Music Player
 
 
 基于 Vue3.3、Vite4、Pinia、Element-Plus 开源的Web音乐播放器，
@@ -12,7 +12,7 @@ Zhipeng Lovesleep Music Player
 
 ### 代码仓库 ⭐
 
-GitHub：` https://github.com/guo-zhi-peng/ZP-lovesleep-Music-Player`
+GitHub：`https://github.com/booboox/imusic/tree/master`
 
 项目功能 🔨
 前端框架：利用最新的Vue.js版本3.3，结合单文件组件和<script setup>语法，以提高开发效率和代码的可维护性。
