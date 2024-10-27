@@ -12,7 +12,7 @@
 
 ### 代码仓库 ⭐
 
-GitHub：` https://github.com/guo-zhi-peng/ZP-lovesleep-Music-Player`
+GitHub：`https://github.com/booboox/imusic/tree/master`
 
 项目功能 🔨
 前端框架：利用最新的Vue.js版本3.3，结合单文件组件和<script setup>语法，以提高开发效率和代码的可维护性。
