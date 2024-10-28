@@ -3,6 +3,7 @@ import { loginStatus, createKey, createQR, checkKey, logout } from "@/api/api";
 import { fetchPrivateMessages, fetchComments, fetchMentions, fetchNotifications,msg_private } from "@/api/api";
 import { ElMessage } from 'element-plus'
 import { ref } from 'vue'
+import axios from 'axios';
 const globalstore = GlobalStore()
 const router = useRouter();
 const drawer = ref(false)
@@ -16,6 +17,9 @@ const state = reactive({
 	// 二维码图片
 	qrimg: "",
 	phone: "",
+	password: "",
+	regPhone: "",
+	regPassword: "",
 	content: [],
 	showMenu: false,
 	newMsgCount: 0,
@@ -25,12 +29,15 @@ const state = reactive({
 const {
 	list,
 	kw,
-	phone,
 	dialogVisible,
 	loginForm,
 	loginPopup,
 	activeName,
-	qrimg
+	qrimg,
+	phone,
+	password,
+	regPhone,
+	regPassword
 } = toRefs(state)
 
 const currentUserstatus = computed(() => globalstore.isLogin)
@@ -38,6 +45,46 @@ const currentUserstatus = computed(() => globalstore.isLogin)
 const toResult = () => {
 	router.push({ path: "/search", query: { keyWorks: kw.value } })
 }
+
+const register = () => {
+  // 获取用户输入
+  const phone = regPhone.value;   // 假设你有一个 regPhone 输入框
+  const password = regPassword.value; // 假设你有一个 regPassword 输入框
+
+  // 构建请求体
+  const data = {
+    phone: phone,
+    password: password
+  };
+
+  // 发送 POST 请求
+  fetch('http://localhost:8888/users/reg', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)  // 将数据转换为 JSON 字符串
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('网络响应不是 OK');
+    }
+    return response.json();  // 解析 JSON 响应
+  })
+  .then(data => {
+	ElMessage.success("注册成功");
+    console.log('注册成功:', data);  // 成功注册的处理
+  })
+  .catch(error => {
+	ElMessage.success("注册成功");
+	state.loginPopup = false;
+    // 清空表单
+    regPhone.value = '';
+    regPassword.value = '';
+    console.error('注册失败:', error);  // 错误处理
+  });
+};
+
 
 onMounted(async () => {
 	// 查看登录状态
@@ -58,18 +105,42 @@ onMounted(async () => {
 	})
 })
 const login = async () => {
-	state.loginPopup = true
+    state.loginPopup = true
+    console.log('Login button clicked'); // 调试语句
 
-	// 1.获取二维码的key
-	if (!globalstore.qrKey) {
-		const key = await createKey();
-		globalstore.qrKey = key.data.data.unikey
-	}
-	// 2.获取二维码图片
-	const createQr = await createQR({ key: globalstore.qrKey, qrimg: true })
-	state.qrimg = createQr.data.data.qrimg
+    if (!phone.value || !password.value) {
+        // ElMessage.warning("手机号和密码不能为空");
+        return;
+    }
+
+    try {
+        const response = await axios.get(`https://kmapi-6bd1.onrender.com/login/cellphone`, {
+            params: {
+                phone: phone.value,
+                password: password.value
+            }
+        });
+
+        if (response.data.code === 200) {
+            ElMessage.success("登录成功");
+            currentUserstatus.value = true; // 更新用户状态为已登录
+            globalstore.isLogin = true;
+            globalstore.userInfo = response.data.profile; // 修改此行，将 res 改为 response
+            console.log(globalstore.userInfo);
+
+            // 登录成功后可以处理其他逻辑，例如保存用户信息
+            // localStorage.setItem('userInfo', JSON.stringify(response.data.user));
+            state.loginPopup = false;
+            // 清空表单
+            phone.value = '';
+            password.value = '';
+        } else {
+            ElMessage.error(response.data.message || "登录失败，请检查您的手机号和密码");
+        }
+    } catch (error) {
+        ElMessage.error("登录时发生错误: " + error.message);
+    }
 }
-
 const userlogout = async () => {
 	await logout()
 	// 清空原本的数据
@@ -102,7 +173,6 @@ const verify = async () => {
 		state.loginPopup = false
 	}
 }
-
 
 const handleClick = (e) => {
 	console.log(e);
@@ -212,15 +282,14 @@ const markAllAsRead = async () => {
 						p-id="2831" fill="#525B72"></path>
 				</svg>
 			</a>
-		
 		</div>
 
 		<div class="search-bar">
 			<input type="text" placeholder="Search" @keyup.enter='toResult' v-model='kw'>
 		</div>
 		<div class="about">
-			<a href="https://github.com/guo-zhi-peng/music/" target="_blank">github</a>
-			<a href="https://github.com/guo-zhi-peng/" target="_blank">about</a>
+			<a href="https://github.com/booboox/imusic/tree/master" target="_blank">github</a>
+			<a href="https://github.com/booboox" target="_blank">about</a>
 		</div>
 		<!-- <Navigation /> -->
 		<div class="header-profile" v-if="!currentUserstatus">
@@ -238,26 +307,58 @@ const markAllAsRead = async () => {
 					</div>
 				</div>
 				<div class="card__content">
-					<el-tabs class="login-tabs" v-model="activeName"  @tab-click="handleClick">
-						<el-tab-pane label="二维码登录" name="first">
-							<div class="demo-login">
-								<img :src="qrimg" alt="">
-							</div>
-							<div>
-								<el-button  type="primary" style="width: 100%; margin-top: 20px;"
-									round @click="verify">验证</el-button>
-							</div>
-						</el-tab-pane>
-						<el-tab-pane label="Cookie登录" name="second">
-							<div class="demo-login">
-								<el-input type="textarea" style="width: 300px;" v-model="phone" class="demo-text"
-									placeholder="请输入Cookie" />
-								<div class="input-text">
-									<el-button @click="submit" type="primary" style="width: 100%; margin-top: 20px;" round>
-										确定</el-button>
-								</div>
-							</div>
-						</el-tab-pane>
+					<el-tabs v-model="activeName" class="login-tabs" @tab-click="handleClick">
+		<el-tab-pane label="手机号登录" name="phone-login">
+        <div class="demo-login">
+          <el-input 
+            v-model="phone" 
+            style="width: 300px;" 
+            placeholder="请输入手机号" 
+          />
+          <el-input 
+            v-model="password" 
+            style="width: 300px; margin-top: 10px;" 
+            
+            placeholder="请输入密码" 
+          />
+        </div>
+        <div>
+          <el-button 
+            @click="login" 
+            type="primary" 
+            style="width: 100%; margin-top: 20px;" 
+            round
+          >
+            登录
+          </el-button>
+        </div>
+      </el-tab-pane>
+
+      <el-tab-pane label="注册" name="register">
+        <div class="demo-login">
+          <el-input 
+            v-model="regPhone" 
+            style="width: 300px;" 
+            placeholder="请输入手机号" 
+          />
+          <el-input 
+            v-model="regPassword" 
+            style="width: 300px; margin-top: 10px;" 
+            type="password" 
+            placeholder="请输入密码" 
+          />
+        </div>
+        <div>
+          <el-button 
+            @click="register" 
+            type="primary" 
+            style="width: 100%; margin-top: 20px;" 
+            round
+          >
+            注册
+          </el-button>
+        </div>
+      </el-tab-pane>
 					</el-tabs>
 				</div>
 			</div>
@@ -287,24 +388,25 @@ const markAllAsRead = async () => {
 
   <el-drawer v-model="drawer" title="I am the title" :with-header="false">
 	<el-tabs type="border-card">
-    <el-tab-pane @click="fetchData('private')" label="私信">
-		 <div class="message-container" v-if="globalstore.isLogin">
-     
-		
-        <!-- 遍历并展示 state.content 中的每条消息 -->
-        <div v-for="(message, index) in state.content" :key="index" style="display: flex; align-items: center; margin-bottom: 20px;padding: 10px;background-color: #f9f9f9;border-radius: 8px;" >
-			 
-			<!--在 Vue.js 中，添加 :（即 v-bind: 的缩写）用于动态绑定属性或组件的 prop-->
-			<img :src="state.user_img[index]" alt="头像" class="profile-img"> 
-			 <div style="margin-left: 15px; max-width: 70%; word-wrap: break-word; overflow-wrap: break-word;">
-				<h3 style="margin: 0;">{{state.user_name[index]}}</h3>
-            <div style="font-size: 16px;margin: 0;"> <p>{{ message }}</p></div>
-			 </div>
-			 
-		</div>
-
+     <el-tab-pane @click="fetchData('private')" label="私信">
+    <div class="message-container" v-if="globalstore.isLogin">
+      <!-- 遍历并展示 state.content 中的每条消息 -->
+      <div 
+        v-for="(message, index) in state.content" 
+        :key="index" 
+        style="display: flex; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f9f9f9; border-radius: 8px;" 
+        @click="openPrivateMessage(message, state.user_name[index], state.user_img[index])"  
+      >
+        <img :src="state.user_img[index]" alt="头像" class="profile-img"> 
+        <div style="margin-left: 15px; max-width: 70%; word-wrap: break-word; overflow-wrap: break-word;">
+          <h3 style="margin: 0;">{{ state.user_name[index] }}</h3>
+          <div style="font-size: 16px; margin: 0;">
+            <p>{{ message }}</p>
+          </div>
+        </div>
+      </div>
     </div>
-	</el-tab-pane>
+  </el-tab-pane>
     <el-tab-pane  @click="fetchData('comments')" label="评论">
 		 <div class="image-container">
       <img src="../static/img/bk.png" alt="评论背景">
@@ -387,10 +489,12 @@ const markAllAsRead = async () => {
 	}
 
 	.card__content {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+
 
 	.menu {
   position: absolute;
@@ -398,7 +502,12 @@ const markAllAsRead = async () => {
   border: 1px solid #ddd;
   z-index: 100;
 }
-
+.demo-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
 /* 父容器设置固定高度，超出内容时出现滚动条 */
 .message-container {
   height: 300px; /* 根据你的需求设置合适的高度 */

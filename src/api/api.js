@@ -20,6 +20,10 @@ export const newMusic = () => request.get(`/personalized/newsong`);
 // 最新mv
 export const newMV = () => request.get(`/mv/first`);
 export const mvDetail = (id) => request.get(`/mv/detail?mvid=${id}`);
+<<<<<<< HEAD
+=======
+export const mvdz = (id) => request.get(`/mv/url?id=${id}`);
+>>>>>>> final
 //热门电台
 export const getRadio = (params) => request.get(`/dj/hot?limit=${params.limit}&offset=${params.offset}`);
 //下载歌曲
@@ -68,7 +72,15 @@ export const commentMusic = (params) => request.get(`/comment/music`, { params }
 export const videoSearch = (params) => request.post(`/video/search`, params)
 // 获取动漫Url
 export const videoUrl = (params) => request.post(`/video/chapter`, params)
-
+// 发布评论
+export const publishComment = (t, type, id, content) => {
+    return request.post(`/comment`, {
+        t: t,
+        type: type,
+        id: id,
+        content: content
+    });
+};
 // 获取私信内容
 export const fetchPrivateMessages = (uid) =>
     request.get(`/msg/private/history?uid=${uid}`);
@@ -88,3 +100,11 @@ export const fetchNotifications = () =>
 export const msg_private = () => request.get(`/msg/private?limit=6`);
 
 export const Heart_Mode = (id) => request.get(`/playmode/intelligence/list?id=${id}&pid=24381616`);
+
+//喜欢音乐
+export const likeMusic = (id, like = true) => {
+    return request.post('/like', {
+        id,
+        like
+    });
+};

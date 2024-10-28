@@ -24,7 +24,9 @@ const toUserList = (e) => {
 <template>
   <el-scrollbar class="left-side">
     <div class="side-wrapper">
-      
+      <div class="side-title flex" style="justify-content: center">
+        <img src="@/static/img/icon.jpg" alt="" style="width: 150px" />
+      </div>
       <div class="side-menu">
         <router-link to="/">
           <svg viewBox="0 0 512 512">
@@ -181,6 +183,25 @@ const toUserList = (e) => {
             ></path>
           </svg>
           动漫
+        </router-link>
+        <router-link to="/favorites">
+          <svg
+            t="1686815748873"
+            class="icon"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="4565"
+            width="28"
+            height="28"
+          >
+            <path
+              d="M512 850.5l-8.8-7.6C222.5 608 64 471.8 64 332.7 64 198.8 198.8 64 332.7 64c72.3 0 139.1 26.5 190.5 75.4C558.2 90.5 625 64 697.3 64 831.2 64 966 198.8 966 332.7c0 139.1-158.5 275.3-439.2 510.3l-8.8 7.5z"
+              fill="#808080"
+              p-id="4566"
+            ></path>
+          </svg>
+          收藏
         </router-link>
         <router-link to="/testPlayer">
           <svg
