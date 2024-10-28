@@ -238,14 +238,14 @@ const markAllAsRead = async () => {
 					</div>
 				</div>
 				<div class="card__content">
-					<el-tabs v-model="activeName" class="login-tabs" @tab-click="handleClick">
+					<el-tabs class="login-tabs" v-model="activeName"  @tab-click="handleClick">
 						<el-tab-pane label="二维码登录" name="first">
 							<div class="demo-login">
 								<img :src="qrimg" alt="">
 							</div>
 							<div>
-								<el-button @click="verify" type="primary" style="width: 100%; margin-top: 20px;"
-									round>验证</el-button>
+								<el-button  type="primary" style="width: 100%; margin-top: 20px;"
+									round @click="verify">验证</el-button>
 							</div>
 						</el-tab-pane>
 						<el-tab-pane label="Cookie登录" name="second">
