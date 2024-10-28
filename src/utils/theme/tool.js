@@ -63,5 +63,5 @@ export function getLightColor(color, level) {
  * 测试自动带入
  */
 export function testTitle(params) {
-	return "哈哈哈testTitle"
+	return "testTitle"
 }

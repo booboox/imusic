@@ -27,10 +27,12 @@ html {
 	box-sizing: border-box;
 	-webkit-font-smoothing: antialiased;
 }
+
 #app {
 	max-width: 1550px;
 	width: 100%;
 }
+
 body {
 	font-family: var(--body-font);
 	// background-color: #dde2eb;
@@ -42,20 +44,25 @@ body {
 	flex-direction: column;
 	// padding: 2em;
 	height: 100%;
+
 	@media screen and (max-width: 480px) {
 		padding: 0.8em;
 	}
 }
-.slider-demo-block {
+
+<<<<<<< HEAD=======>>>>>>>final .slider-demo-block {
 	display: flex;
 	align-items: center;
 }
+
 img {
 	max-width: 100%;
 }
+
 .el-tabs__nav-wrap::after {
 	background-color: transparent !important;
 }
+
 .app {
 	background-color: var(--prism-background1);
 	max-height: 860px;
@@ -212,7 +219,7 @@ img {
 		top: -6px;
 	}
 
-	& + svg {
+	&+svg {
 		margin-left: 22px;
 
 		@media screen and (max-width: 945px) {
@@ -229,6 +236,7 @@ img {
 }
 
 .wide {
+
 	.header-menu,
 	.header-profile {
 		display: none;
@@ -265,7 +273,7 @@ img {
 	}
 }
 
-.side-wrapper + .side-wrapper {
+.side-wrapper+.side-wrapper {
 	margin-top: 20px;
 }
 
@@ -519,7 +527,8 @@ img {
 			transition: 0.3s;
 
 			&:hover {
-				// background-color: var(--theme-bg-color);
+				<<<<<<< HEAD=======>>>>>>>final // background-color: var(--theme-bg-color);
+
 				&:first-child {
 					border-radius: 13px 13px 0 0;
 				}
@@ -815,7 +824,7 @@ img {
 	font-size: 14px;
 	font-weight: 400;
 
-	& + .checkbox-wrapper {
+	&+.checkbox-wrapper {
 		margin: 20px 0 40px;
 	}
 }
@@ -824,7 +833,7 @@ img {
 	display: none;
 }
 
-.checkbox + label {
+.checkbox+label {
 	display: flex;
 	align-items: center;
 
@@ -840,7 +849,7 @@ img {
 	}
 }
 
-.checkbox:checked + label:before {
+.checkbox:checked+label:before {
 	background-color: #3a6df0;
 	border-color: #3a6df0;
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3e%3cpath d='M20 6L9 17l-5-5'/%3e%3c/svg%3e");
@@ -933,6 +942,7 @@ img {
 		// border-bottom: 1px solid var(--border-color);
 		// padding-bottom: 20px;
 	}
+
 	&__footer {
 		font-size: 14px;
 		font-weight: 400;
@@ -942,6 +952,7 @@ img {
 		flex-direction: row;
 		justify-content: space-between;
 	}
+
 	&-buttons {
 		display: flex;
 		align-items: center;
@@ -962,7 +973,7 @@ img {
 		width: calc(100% - 20px);
 		margin-top: 20px;
 
-		& + .app-card {
+		&+.app-card {
 			margin-left: 0;
 		}
 	}
@@ -1033,6 +1044,7 @@ img {
 	background-color: var(--content-bg);
 	border-radius: 10px;
 	height: 250px;
+
 	.artist-avatar {
 		width: 250px;
 		// width: 100%;
@@ -1189,6 +1201,7 @@ img {
 .tags {
 	display: flex;
 	flex-direction: row;
+
 	&-item {
 		margin: 0px 5px;
 		color: var(--theme-color);
@@ -1235,24 +1248,29 @@ img {
 	justify-content: space-around;
 	margin: 0px 100px;
 	height: 100%;
+
 	.vinyl {
 		width: 350px;
 		height: 350px;
 		position: absolute;
 		right: -180px;
 	}
+
 	.elImg {
 		width: 350px;
 		height: 350px;
 		box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
 	}
 }
+
 .el-drawer {
 	box-shadow: none;
 }
+
 .flex {
 	display: flex;
 }
+
 // 导入
 /* devanagari */
 @font-face {
@@ -1260,8 +1278,7 @@ img {
 	font-style: normal;
 	font-weight: 200;
 	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLFj_Z11lFc-K.woff2)
-		format('woff2');
+	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLFj_Z11lFc-K.woff2) format('woff2');
 	unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8,
 		U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
 }
@@ -1272,8 +1289,7 @@ img {
 	font-style: normal;
 	font-weight: 200;
 	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLFj_Z1JlFc-K.woff2)
-		format('woff2');
+	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLFj_Z1JlFc-K.woff2) format('woff2');
 	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
 		U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
@@ -1284,8 +1300,7 @@ img {
 	font-style: normal;
 	font-weight: 200;
 	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLFj_Z1xlFQ.woff2)
-		format('woff2');
+	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLFj_Z1xlFQ.woff2) format('woff2');
 	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
 		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
 		U+FEFF, U+FFFD;
@@ -1297,8 +1312,7 @@ img {
 	font-style: normal;
 	font-weight: 300;
 	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLDz8Z11lFc-K.woff2)
-		format('woff2');
+	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLDz8Z11lFc-K.woff2) format('woff2');
 	unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8,
 		U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
 }
@@ -1309,8 +1323,7 @@ img {
 	font-style: normal;
 	font-weight: 300;
 	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLDz8Z1JlFc-K.woff2)
-		format('woff2');
+	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLDz8Z1JlFc-K.woff2) format('woff2');
 	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
 		U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
@@ -1321,8 +1334,7 @@ img {
 	font-style: normal;
 	font-weight: 300;
 	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLDz8Z1xlFQ.woff2)
-		format('woff2');
+	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLDz8Z1xlFQ.woff2) format('woff2');
 	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
 		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
 		U+FEFF, U+FFFD;
@@ -1334,8 +1346,7 @@ img {
 	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiEyp8kv8JHgFVrJJbecmNE.woff2)
-		format('woff2');
+	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiEyp8kv8JHgFVrJJbecmNE.woff2) format('woff2');
 	unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8,
 		U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
 }
@@ -1346,8 +1357,7 @@ img {
 	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiEyp8kv8JHgFVrJJnecmNE.woff2)
-		format('woff2');
+	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiEyp8kv8JHgFVrJJnecmNE.woff2) format('woff2');
 	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
 		U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
@@ -1358,8 +1368,7 @@ img {
 	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiEyp8kv8JHgFVrJJfecg.woff2)
-		format('woff2');
+	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiEyp8kv8JHgFVrJJfecg.woff2) format('woff2');
 	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
 		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
 		U+FEFF, U+FFFD;
@@ -1371,8 +1380,7 @@ img {
 	font-style: normal;
 	font-weight: 500;
 	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLGT9Z11lFc-K.woff2)
-		format('woff2');
+	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLGT9Z11lFc-K.woff2) format('woff2');
 	unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8,
 		U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
 }
@@ -1383,8 +1391,7 @@ img {
 	font-style: normal;
 	font-weight: 500;
 	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLGT9Z1JlFc-K.woff2)
-		format('woff2');
+	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLGT9Z1JlFc-K.woff2) format('woff2');
 	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
 		U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
@@ -1395,8 +1402,7 @@ img {
 	font-style: normal;
 	font-weight: 500;
 	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2)
-		format('woff2');
+	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2) format('woff2');
 	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
 		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
 		U+FEFF, U+FFFD;
@@ -1408,8 +1414,7 @@ img {
 	font-style: normal;
 	font-weight: 600;
 	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLEj6Z11lFc-K.woff2)
-		format('woff2');
+	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLEj6Z11lFc-K.woff2) format('woff2');
 	unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8,
 		U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
 }
@@ -1420,8 +1425,7 @@ img {
 	font-style: normal;
 	font-weight: 600;
 	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLEj6Z1JlFc-K.woff2)
-		format('woff2');
+	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLEj6Z1JlFc-K.woff2) format('woff2');
 	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
 		U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
@@ -1432,8 +1436,7 @@ img {
 	font-style: normal;
 	font-weight: 600;
 	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2)
-		format('woff2');
+	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2) format('woff2');
 	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
 		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
 		U+FEFF, U+FFFD;
@@ -1445,8 +1448,7 @@ img {
 	font-style: normal;
 	font-weight: 700;
 	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLCz7Z11lFc-K.woff2)
-		format('woff2');
+	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLCz7Z11lFc-K.woff2) format('woff2');
 	unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8,
 		U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
 }
@@ -1457,8 +1459,7 @@ img {
 	font-style: normal;
 	font-weight: 700;
 	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLCz7Z1JlFc-K.woff2)
-		format('woff2');
+	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLCz7Z1JlFc-K.woff2) format('woff2');
 	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
 		U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
@@ -1469,8 +1470,7 @@ img {
 	font-style: normal;
 	font-weight: 700;
 	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2)
-		format('woff2');
+	src: url(https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2) format('woff2');
 	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
 		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
 		U+FEFF, U+FFFD;
