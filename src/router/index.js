@@ -89,6 +89,11 @@ const routes = [
 		name: "playerAnimation",
 		component: () => import('@/pages/animation/player.vue'),
 	},
+	{
+		path: '/favorites',
+		name: 'Favorites',
+		component: () => import('@/pages/favorites/index.vue'), // 假设你创建了一个 Favorites.vue 组件
+	},
 ]
 
 const router = createRouter({

@@ -1,5 +1,7 @@
 <script setup>
 import { mvUrl, commentMV, mvDetail } from "@/api/api";
+import { watch, reactive, onMounted, toRefs } from 'vue';
+import { useRoute } from 'vue-router';
 
 const route = useRoute();
 
@@ -17,21 +19,32 @@ const state = reactive({
 });
 const { list, mvUrls, commList, mvDetails } = toRefs(state);
 
-onMounted(async () => {
-  // 1.获取MV地址
-  mvUrl({ id: route.params.id }).then(({ data }) => {
-    state.mvUrls = data.data.url;
-  });
-  // 2.获取MV的详情
-  mvDetail(route.params.id).then(({ data }) => {
-    state.mvDetails = data.data;
-  });
-  // 3.获取MV评论
-  commentMV({ id: route.params.id, limit: 30, offset: 0 }).then(({ data }) => {
-    state.commList = data;
-  });
+// 定义一个函数来获取MV相关数据
+const fetchMVData = async (id) => {
+  // 获取MV地址
+  const mvResponse = await mvUrl({ id });
+  state.mvUrls = mvResponse.data.data.url;
+
+  // 获取MV的详情
+  const detailResponse = await mvDetail(id);
+  state.mvDetails = detailResponse.data.data;
+
+  // 获取MV评论
+  const commentResponse = await commentMV({ id, limit: 30, offset: 0 });
+  state.commList = commentResponse.data;
+};
+
+// 在组件挂载时获取初始的MV数据
+onMounted(() => {
+  fetchMVData(route.params.id);
+});
+
+// 监听route.params.id的变化
+watch(() => route.params.id, (newId) => {
+  fetchMVData(newId); // 重新获取数据
 });
 </script>
+
 <template>
   <div class="content-section menuBar-mv">
     <video
@@ -44,8 +57,8 @@ onMounted(async () => {
     <div class="content-section-title">
       <h2>
         {{ mvDetails.artists.map((item) => item.name).join() }}
-        <span style="margin: 0px 10px">-</span
-        ><span> {{ mvDetails.name }}</span>
+        <span style="margin: 0px 10px">-</span>
+        <span> {{ mvDetails.name }}</span>
       </h2>
       {{ route.query.id }}
       <!-- 评论 -->

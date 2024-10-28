@@ -1,18 +1,22 @@
 <script setup>
 import { newMusic, songPlaylist } from "@/api/api";
+import { ElCarousel, ElCarouselItem } from 'element-plus';
+import img1 from '@/static/img/lbt/1.png';
+import img2 from '@/static/img/lbt/2.png';
+import img3 from '@/static/img/lbt/3.png';
+import img4 from '@/static/img/lbt/4.png';
+
 const router = useRouter();
 const state = reactive({
   searchKw: "",
   tableData: [],
   playlists: [],
   loading: true,
-  images: [
-  '../static/img/bk.png', // 确保路径正确
-  '../static/img/bk.png',
-  '../static/img/bk.png',
-  '../static/img/bk.png'
-]
 });
+
+// 导入的图片数组
+const carouselImages = [img1, img2, img3, img4];
+
 const { tableData, playlists, loading } = toRefs(state);
 
 onMounted(async () => {
@@ -40,23 +44,16 @@ onMounted(async () => {
   });
 });
 </script>
+
 <template>
   <div>
-    
-      <el-carousel indicator-position="outside">
-    <el-carousel-item >
-      <img src="../static/img/xzq.webp" alt="Carousel Image" class="carousel-image" />
-    </el-carousel-item>
-     <el-carousel-item >
-      <img src="../static/img/cyx.jpg" alt="Carousel Image" class="carousel-image" />
-    </el-carousel-item>
-     <el-carousel-item >
-      <img src="../static/img/fdt.jpg" alt="Carousel Image" class="carousel-image" />
-    </el-carousel-item>
-  </el-carousel>
+    <!-- 添加轮播图 -->
+    <el-carousel :interval="4000" type="card" height="200px">
+      <el-carousel-item v-for="(image, index) in carouselImages" :key="index">
+        <img :src="image" alt="Carousel Image" style="width: 100%; height: 100%; object-fit: cover;">
+      </el-carousel-item>
+    </el-carousel>
 
-     
-   
     <el-skeleton :rows="5" animated :loading="loading">
       <template #default>
         <div class="content-section">
@@ -84,14 +81,20 @@ onMounted(async () => {
     </el-skeleton>
   </div>
 </template>
+
 <style lang="scss" scoped>
+.el-carousel__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 确保图片填满 */
+}
 
 .el-carousel__item h3 {
-  display: flex;
   color: #475669;
   opacity: 0.75;
-  line-height: 300px;
+  line-height: 200px;
   margin: 0;
+  text-align: center;
 }
 
 .el-carousel__item:nth-child(2n) {
@@ -100,10 +103,5 @@ onMounted(async () => {
 
 .el-carousel__item:nth-child(2n + 1) {
   background-color: #d3dce6;
-}
-
-.carousel-image {
-  width: 100%; /* 使图片自适应轮播图宽度 */
-  height: 100%; /* 维持图片比例 */
 }
 </style>
