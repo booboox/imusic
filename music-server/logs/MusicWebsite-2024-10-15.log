@@ -1,0 +1,179 @@
+2024-10-15 12:49:30 INFO [com.example.yin.YinMusicApplication]: Starting YinMusicApplication using Java 11.0.4 on LAPTOP-21TCA5UF with PID 12376 (D:\86188\download\Yin_music-main\Yin_music-main\music-website-master\music-website-master\music-server\target\classes started by 86188 in D:\86188\download\Yin_music-main\Yin_music-main\music-website-master\music-website-master\music-server)
+2024-10-15 12:49:30 INFO [com.example.yin.YinMusicApplication]: No active profile set, falling back to default profiles: default
+2024-10-15 12:49:30 INFO [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor]: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-15 12:49:30 INFO [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor]: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-10-15 12:49:30 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat initialized with port(s): 8888 (http)
+2024-10-15 12:49:31 INFO [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext]: Root WebApplicationContext: initialization completed in 937 ms
+2024-10-15 12:49:31 INFO [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer]: LiveReload server is running on port 35729
+2024-10-15 12:49:31 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat started on port(s): 8888 (http) with context path ''
+2024-10-15 12:49:31 INFO [com.example.yin.YinMusicApplication]: Started YinMusicApplication in 1.438 seconds (JVM running for 2.225)
+2024-10-15 12:53:23 INFO [com.example.yin.YinMusicApplication]: Starting YinMusicApplication using Java 11.0.4 on LAPTOP-21TCA5UF with PID 14004 (D:\86188\download\Yin_music-main\Yin_music-main\music-website-master\music-website-master\music-server\target\classes started by 86188 in D:\86188\download\Yin_music-main\Yin_music-main\music-website-master\music-website-master\music-server)
+2024-10-15 12:53:23 INFO [com.example.yin.YinMusicApplication]: No active profile set, falling back to default profiles: default
+2024-10-15 12:53:23 INFO [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor]: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-15 12:53:23 INFO [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor]: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-10-15 12:53:24 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat initialized with port(s): 8888 (http)
+2024-10-15 12:53:24 INFO [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext]: Root WebApplicationContext: initialization completed in 852 ms
+2024-10-15 12:53:25 INFO [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer]: LiveReload server is running on port 35729
+2024-10-15 12:53:25 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat started on port(s): 8888 (http) with context path ''
+2024-10-15 12:53:25 INFO [com.example.yin.YinMusicApplication]: Started YinMusicApplication in 1.332 seconds (JVM running for 1.937)
+2024-10-15 12:54:06 INFO [org.springframework.web.servlet.DispatcherServlet]: Initializing Servlet 'dispatcherServlet'
+2024-10-15 12:54:06 INFO [org.springframework.web.servlet.DispatcherServlet]: Completed initialization in 0 ms
+2024-10-15 12:54:06 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Starting...
+2024-10-15 12:54:07 ERROR [com.zaxxer.hikari.pool.HikariPool]: HikariPool-1 - Exception during pool initialization.
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:835)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:455)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:159)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:117)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:84)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:70)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:337)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:434)
+	at com.sun.proxy.$Proxy63.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:167)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:75)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:53)
+	at com.sun.proxy.$Proxy66.verifyPassword(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy67.verifyPassword(Unknown Source)
+	at com.example.yin.service.impl.AdminServiceImpl.veritypasswd(AdminServiceImpl.java:17)
+	at com.example.yin.controller.AdminController.loginStatus(AdminController.java:29)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeProtocol.negotiateSSLConnection(NativeProtocol.java:361)
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.negotiateSSLConnection(NativeAuthenticationProvider.java:777)
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.proceedHandshakeWithPluggableAuthentication(NativeAuthenticationProvider.java:486)
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:202)
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1452)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:165)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:955)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	... 90 more
+Caused by: javax.net.ssl.SSLException: Received fatal alert: internal_error
+	at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:133)
+	at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:117)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:307)
+	at java.base/sun.security.ssl.Alert$AlertConsumer.consume(Alert.java:285)
+	at java.base/sun.security.ssl.TransportContext.dispatch(TransportContext.java:180)
+	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:164)
+	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1152)
+	at java.base/sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1063)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:402)
+	at com.mysql.cj.protocol.ExportControlled.performTlsHandshake(ExportControlled.java:316)
+	at com.mysql.cj.protocol.StandardSocketFactory.performTlsHandshake(StandardSocketFactory.java:188)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.performTlsHandshake(NativeSocketConnection.java:99)
+	at com.mysql.cj.protocol.a.NativeProtocol.negotiateSSLConnection(NativeProtocol.java:352)
+	... 97 more
+2024-10-15 12:56:28 INFO [com.example.yin.YinMusicApplication]: Starting YinMusicApplication using Java 11.0.4 on LAPTOP-21TCA5UF with PID 19856 (D:\86188\download\Yin_music-main\Yin_music-main\music-website-master\music-website-master\music-server\target\classes started by 86188 in D:\86188\download\Yin_music-main\Yin_music-main\music-website-master\music-website-master\music-server)
+2024-10-15 12:56:28 INFO [com.example.yin.YinMusicApplication]: No active profile set, falling back to default profiles: default
+2024-10-15 12:56:28 INFO [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor]: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-15 12:56:28 INFO [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor]: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-10-15 12:56:29 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat initialized with port(s): 8888 (http)
+2024-10-15 12:56:29 INFO [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext]: Root WebApplicationContext: initialization completed in 854 ms
+2024-10-15 12:56:29 INFO [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer]: LiveReload server is running on port 35729
+2024-10-15 12:56:29 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat started on port(s): 8888 (http) with context path ''
+2024-10-15 12:56:29 INFO [com.example.yin.YinMusicApplication]: Started YinMusicApplication in 1.32 seconds (JVM running for 1.927)
+2024-10-15 12:56:45 INFO [org.springframework.web.servlet.DispatcherServlet]: Initializing Servlet 'dispatcherServlet'
+2024-10-15 12:56:45 INFO [org.springframework.web.servlet.DispatcherServlet]: Completed initialization in 1 ms
+2024-10-15 12:56:45 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Starting...
+2024-10-15 12:56:45 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Start completed.
+2024-10-15 12:59:16 INFO [com.example.yin.YinMusicApplication]: Starting YinMusicApplication using Java 11.0.4 on LAPTOP-21TCA5UF with PID 2024 (D:\86188\download\Yin_music-main\Yin_music-main\music-website-master\music-website-master\music-server\target\classes started by 86188 in D:\86188\download\Yin_music-main\Yin_music-main\music-website-master\music-website-master\music-server)
+2024-10-15 12:59:16 INFO [com.example.yin.YinMusicApplication]: No active profile set, falling back to default profiles: default
+2024-10-15 12:59:16 INFO [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor]: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-15 12:59:16 INFO [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor]: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-10-15 12:59:17 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat initialized with port(s): 8888 (http)
+2024-10-15 12:59:17 INFO [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext]: Root WebApplicationContext: initialization completed in 918 ms
+2024-10-15 12:59:18 INFO [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer]: LiveReload server is running on port 35729
+2024-10-15 12:59:18 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat started on port(s): 8888 (http) with context path ''
+2024-10-15 12:59:18 INFO [com.example.yin.YinMusicApplication]: Started YinMusicApplication in 1.423 seconds (JVM running for 2.13)
+2024-10-15 12:59:31 INFO [org.springframework.web.servlet.DispatcherServlet]: Initializing Servlet 'dispatcherServlet'
+2024-10-15 12:59:31 INFO [org.springframework.web.servlet.DispatcherServlet]: Completed initialization in 0 ms
+2024-10-15 12:59:32 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Starting...
+2024-10-15 12:59:32 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Start completed.

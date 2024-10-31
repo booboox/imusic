@@ -3,16 +3,19 @@
 
 ### 介绍 📖
 
+技术栈
+前端 Vue Element-Plus等
+
+后端 springboot mybatis mysql5.7
 
 
-基于 Vue3.3、Vite4、Pinia、Element-Plus 开源的Web音乐播放器，
 
 
 
 
 ### 代码仓库 ⭐
 
-GitHub：`https://github.com/booboox/imusic/tree/master`
+GitHub：`https://github.com/booboox/imusic.git`
 
 项目功能 🔨
 前端框架：利用最新的Vue.js版本3.3，结合单文件组件和<script setup>语法，以提高开发效率和代码的可维护性。
@@ -23,26 +26,17 @@ GitHub：`https://github.com/booboox/imusic/tree/master`
 
 UI库：基于Element Plus，一个基于Vue3的组件库，用于快速构建高质量的用户界面。
 
+后端基于springboot框架，mybatis管理数据库相关操作，数据库采用MySQL5.7进行数据存储
+
 ### 安装使用步骤 📔
 
 * Clone
-
-
-#Gitee
-
-
+前端
 
 * Install：
   `yarn`#npm install
 * Run：
   `yarn dev`#npm run dev
+后端在IDEA中运行YinMusicApplication
 
 
-
-
-### 项目后台接口 🧩
-
-* https://neteasecloudmusicapi.vercel.app/#/  （可能需魔法上网）
-
-### 补充
-* 跨平台功能实在能力水平不够，也找不到能力范围内的参考资料，所以只做了web端~

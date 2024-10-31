@@ -1,0 +1,18 @@
+2024-10-31 14:08:24 INFO [com.example.yin.YinMusicApplication]: Starting YinMusicApplication using Java 11.0.4 on LAPTOP-21TCA5UF with PID 17724 (D:\86188\desktop\commit\music-server\target\classes started by 86188 in D:\86188\desktop\commit\music-server)
+2024-10-31 14:08:24 INFO [com.example.yin.YinMusicApplication]: No active profile set, falling back to default profiles: default
+2024-10-31 14:08:24 INFO [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor]: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-31 14:08:24 INFO [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor]: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-10-31 14:08:24 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat initialized with port(s): 8081 (http)
+2024-10-31 14:08:24 INFO [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext]: Root WebApplicationContext: initialization completed in 763 ms
+2024-10-31 14:08:25 INFO [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer]: LiveReload server is running on port 35729
+2024-10-31 14:08:25 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat started on port(s): 8081 (http) with context path ''
+2024-10-31 14:08:25 INFO [com.example.yin.YinMusicApplication]: Started YinMusicApplication in 1.463 seconds (JVM running for 2.172)
+2024-10-31 14:24:21 INFO [com.example.yin.YinMusicApplication]: Starting YinMusicApplication using Java 11.0.4 on LAPTOP-21TCA5UF with PID 4624 (D:\86188\desktop\commit\music-server\target\classes started by 86188 in D:\86188\desktop\commit\music-server)
+2024-10-31 14:24:21 INFO [com.example.yin.YinMusicApplication]: No active profile set, falling back to default profiles: default
+2024-10-31 14:24:21 INFO [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor]: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-31 14:24:21 INFO [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor]: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-10-31 14:24:21 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat initialized with port(s): 8081 (http)
+2024-10-31 14:24:21 INFO [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext]: Root WebApplicationContext: initialization completed in 646 ms
+2024-10-31 14:24:22 INFO [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer]: LiveReload server is running on port 35729
+2024-10-31 14:24:22 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat started on port(s): 8081 (http) with context path ''
+2024-10-31 14:24:22 INFO [com.example.yin.YinMusicApplication]: Started YinMusicApplication in 1.267 seconds (JVM running for 1.945)
