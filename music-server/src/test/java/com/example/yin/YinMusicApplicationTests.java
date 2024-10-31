@@ -1,5 +1,8 @@
 package com.example.yin;
 
+import com.example.yin.dao.UserMapper;
+import com.example.yin.domain.User;
+import com.example.yin.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,82 +14,26 @@ import java.util.Date;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class YinMusicApplicationTests {
+    @Autowired
+    private UserMapper userMapper;
+    @Autowired
+    private UserService iUserService;
 
-    //@Autowired
-    // private SongServiceImpl songService;
-    // private SingerServiceImpl singerService;
-    // private SongListServiceImpl songListService;
-    // private RankListServiceImpl rankListService;
+    @Test
+    public void insert() {
+        User user = new User();
+        user.setUsername("user01");
+        user.setPassword("123456");
+        Integer rows = userMapper.insert(user);
+        System.out.println("rows=" + rows);
+    }
 
-    // @Test
-    // public void contextLoads() {
-    //
-    // }
-
-    // @Test
-    // public void testRank(){
-    // Rank rank_list = new Rank();
-    // rank_list.setConsumerId(2L);
-    // rank_list.setScore(3);
-    // rank_list.setSongListId(2L);
-    // rankListService.insert(rank_list);
-    // System.out.println("歌单均分为"+rankListService.selectAverScore(2L));
-    // }
-
-    // 歌曲
-    // @Test
-    // public void songTest(){
-    // Song song = new Song();
-    // song.setName("Sanna Nielsen-Undo");
-    // song.setPic("/img/songPic/1775711278864263.jpg");
-    // song.setSingerId(42);
-    // song.setCreateTime(new Date());
-    // song.setUpdateTime(new Date());
-    // song.setIntroduction("Undo");
-    // song.setLyric("[00:00:00]暂无歌词");
-    // song.setUrl("/song/Sanna Nielsen-Undo.mp3");
-    // songService.addSong(song);
-    // }
-
-    // //歌手
-    // @Test
-    // public void singerTest(){
-    // Singer singer = new Singer();
-    // singer.setName("Álvaro Soler");
-    // singer.setSex(new Byte("1"));
-    // singer.setPic("/img/singerPic/soler.jpg");
-    // singer.setBirth(new Date());
-    // singer.setLocation("西班牙");
-    // singer.setIntroduction("全名是Álvaro Tauchert
-    // Soler，是一位新晋西班牙歌手，流行音乐作曲家。出生于1991年，西班牙巴塞罗纳。");
-    // singerService.addSinger(singer);
-    // }
-    // @Test
-    // public void singerTest2()
-    // {
-    // System.out.println(singerService.allSinger());
-    // }
-
-    // 歌单
-    // @Test
-    // public void songListTest(){
-    //
-    // SongList songList = new SongList();
-    // songList.setTitle("国风传统器乐赏~~♪");
-    // songList.setPic("/img/songListPic/19169985230816413.jpg");
-    // songList.setIntroduction(" 都是自己很喜欢的吉他指弹");
-    // songList.setStyle("乐器");
-    // songListService.addSongList(songList);
-    // }
-    // @Test
-    // public void songListTest2()
-    // {
-    // System.out.println(songListService.allSongList());
-    // }
-
-    // @Test
-    // public void consumerTest2()
-    // {
-    // System.out.println(consumerService.allUser());
-    // }
+    @Test
+    public void reg() {
+            User user = new User();
+            user.setUsername("user11");
+            user.setPassword("123456");
+            iUserService.reg(user);
+            System.out.println("注册成功！");
+    }
 }

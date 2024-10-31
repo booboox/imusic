@@ -21,7 +21,9 @@ public class CommentController {
     @Autowired
     private CommentServiceImpl commentService;
 
-    // 评论
+    /**
+     *评论
+     */
     @ResponseBody
     @RequestMapping(value = "/comment", method = RequestMethod.POST)
     public Object addComment(HttpServletRequest req) {
@@ -49,7 +51,9 @@ public class CommentController {
         }
     }
 
-    // 删除评论
+    /**
+     *删除评论
+     */
     @RequestMapping(value = "/comment/delete", method = RequestMethod.GET)
     public Object deleteComment(HttpServletRequest req) {
         String id = req.getParameter("id");
@@ -62,7 +66,9 @@ public class CommentController {
         }
     }
 
-    // 获得指定歌曲 ID 的评论列表
+    /**
+     * 获得指定歌曲 ID 的评论列表
+     */
     @RequestMapping(value = "/comment/song/detail", method = RequestMethod.GET)
     public Object commentOfSongId(HttpServletRequest req) {
         String songId = req.getParameter("songId");
@@ -70,7 +76,9 @@ public class CommentController {
         return new SuccessMessage<List<Comment>>(null, commentService.commentOfSongId(Integer.parseInt(songId))).getMessage();
     }
 
-    // 获得指定歌单 ID 的评论列表
+    /**
+     *获得指定歌单 ID 的评论列表
+     */
     @RequestMapping(value = "/comment/songList/detail", method = RequestMethod.GET)
     public Object commentOfSongListId(HttpServletRequest req) {
         String songListId = req.getParameter("songListId");
@@ -79,7 +87,9 @@ public class CommentController {
                 .getMessage();
     }
 
-    // 点赞
+    /**
+     * 点赞
+     */
     @ResponseBody
     @RequestMapping(value = "/comment/like", method = RequestMethod.POST)
     public Object commentOfLike(HttpServletRequest req) {

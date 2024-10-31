@@ -22,7 +22,9 @@ public class CollectController {
     @Autowired
     private CollectServiceImpl collectService;
 
-    // 添加收藏的歌曲
+    /**
+     * 添加收藏的歌曲
+     */
     @ResponseBody
     @RequestMapping(value = "/like", method = RequestMethod.POST)
     public Object addCollection(HttpServletRequest req) {
@@ -49,7 +51,9 @@ public class CollectController {
         }
     }
 
-    // 取消收藏的歌曲
+    /**
+     * 取消收藏的歌曲
+     */
     @RequestMapping(value = "/like/delete", method = RequestMethod.DELETE)
     public Object deleteCollection(HttpServletRequest req) {
         String user_id = req.getParameter("userId").trim();
@@ -63,7 +67,9 @@ public class CollectController {
         }
     }
 
-    // 是否收藏歌曲
+    /**
+     * 是否收藏歌曲
+     */
     @RequestMapping(value = "/like/status", method = RequestMethod.POST)
     public Object isCollection(HttpServletRequest req) {
         String user_id = req.getParameter("userId").trim();
@@ -77,7 +83,9 @@ public class CollectController {
         }
     }
 
-    // 返回的指定用户 ID 收藏的列表
+    /**
+     * 返回的指定用户 ID 收藏的列表
+     */
     @RequestMapping(value = "/likelist", method = RequestMethod.GET)
     public Object collectionOfUser(HttpServletRequest req) {
         String userId = req.getParameter("userId");

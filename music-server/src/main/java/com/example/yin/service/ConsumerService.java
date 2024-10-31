@@ -20,10 +20,6 @@ public interface ConsumerService {
 
     boolean deleteUser(Integer id);
 
-    List<Consumer> allUser();
-
-    List<Consumer> userOfId(Integer id);
-
     List<Consumer> loginStatus(String username);
 
 }

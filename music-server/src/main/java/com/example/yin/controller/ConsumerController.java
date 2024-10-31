@@ -32,6 +32,9 @@ public class ConsumerController {
     @Autowired
     private ConsumerServiceImpl consumerService;
 
+    /**
+     * 配置类
+     */
     @Configuration
     public static class MyPicConfig implements WebMvcConfigurer {
         @Override
@@ -41,6 +44,9 @@ public class ConsumerController {
         }
     }
 
+    /**
+     *添加用户
+     */
     @ResponseBody
     @RequestMapping(value = "/users/add", method = RequestMethod.POST)
     public Object addUser(HttpServletRequest req) {
@@ -99,6 +105,9 @@ public class ConsumerController {
         }
     }
 
+    /**
+     * 登录状态判断
+     */
     @ResponseBody
     @RequestMapping(value = "/user/login/status", method = RequestMethod.POST)
     public Object loginStatus(HttpServletRequest req, HttpSession session) {
@@ -114,23 +123,6 @@ public class ConsumerController {
         }
     }
 
-    /**
-     * 返回所有用户
-     */
-    @RequestMapping(value = "/user", method = RequestMethod.GET)
-    public Object allUser() {
-        return new SuccessMessage<List<Consumer>>(null, consumerService.allUser()).getMessage();
-    }
-
-    /**
-     * 返回指定 ID 的用户
-     */
-    @RequestMapping(value = "/user/detail", method = RequestMethod.GET)
-    public Object userOfId(HttpServletRequest req) {
-        String id = req.getParameter("id");
-
-        return new SuccessMessage<List<Consumer>>(null, consumerService.userOfId(Integer.parseInt(id))).getMessage();
-    }
 
     /**
      * 删除用户
